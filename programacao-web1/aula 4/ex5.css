@@ -1,0 +1,18 @@
+#div1{
+    background-color: rgb(255, 123, 0);
+    border:solid 3px;
+    border-color: green;
+    width: 100px;
+    height: 100px;
+    
+}
+#div2{
+    background-color: rgb(183, 0, 255);
+    border:solid 5px;
+    border-top-color: yellow;
+    border-bottom-color: yellow;
+    border-left-color: rgb(68, 18, 18);
+    border-right-color: rgb(68, 18, 18);
+    width: 300px;
+    height: 25px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 9 e 10</title>
+</head>
+<body>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        tr:nth-child(even){
+            background-color: rgb(142, 197, 245);
+        }
+        tr:hover{
+            background-color: rgb(241, 131, 131);
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 15px;
+            text-align: left;
+        }
+        .identidade{
+            text-align: center;
+        }
+        #cabecalho{
+            background-color: rgb(67, 67, 187);
+        }
+        b{
+            color: aliceblue;
+        }
+    </style>
+    <table>
+        <tr id="cabecalho">
+            <td><b>Base de calculo mensal em R$</b></td>
+            <td><b>Aliquota %</b></td>
+            <td><b>Parcela a deduzir do imposto em R$</b></td>
+        </tr>
+        <tr>
+            <td>Ate 1.903,98</td>
+            <td class="identidade">-</td>
+            <td class="identidade">-</td>
+        </tr>
+        <tr>
+            <td>De 1.903,99 ate 2.826,65</td>
+            <td class="identidade">7,5</td>
+            <td class="identidade">142,80</td>
+        </tr>
+        <tr>
+            <td>De 2.828,66 ate 3.751,05</td>
+            <td class="identidade">15,0</td>
+            <td class="identidade">354,80</td>
+        </tr>
+        <tr>
+            <td>De 3.751,05 ate 4.664,68</td>
+            <td class="identidade">22,5</td>
+            <td class="identidade">636,13</td>
+        </tr>
+        <tr>
+            <td>Acima de 4.664,68</td>
+            <td class="identidade">27,5</td>
+            <td class="identidade">869,36</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,10 @@
+#p1{
+    text-decoration: underline;
+}
+#p2{
+    text-decoration: overline;
+    text-indent: 50px;
+}
+#p3{
+    text-decoration: line-through;
+}
