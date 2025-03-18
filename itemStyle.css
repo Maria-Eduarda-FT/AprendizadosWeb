@@ -1,0 +1,142 @@
+/* Resetando os estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9e7e5;
+    color: #333;
+    width: 100vw;
+
+}
+.notable-regular {
+  font-family: "Notable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.swiper {
+    object-fit: cover;
+    width: 60%; 
+    height: 60%; 
+}
+/* **  menu de navegação  ** */  
+.navbar {
+    background-color: #ee9dad;
+    padding: 15px 0px 15px 0px; 
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.navbar .logo {
+    height: 80px;
+    object-fit: contain; /*mantem a proporção da imagem*/
+    padding-right: 150px;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;  
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    padding-right: 150px;
+}
+.navbar ul li a:hover {
+    color: white;
+}
+.item {/* o mesmo q .navbar ul li */
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+}
+.popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9e7e5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f9e7e5;
+    border-radius: 10px;
+    z-index: 1;
+}
+.popup ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.item:hover .popup {
+    display: block; 
+}
+.textoPopup{
+    color: #000;
+    transition: 500ms;
+    padding: 5px;;
+} 
+.textoPopup:hover{
+    transform: scale(1.2);
+}
+
+.sacola-icon {
+    width: 30px;
+    height: 30px;
+    padding: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.sacola-icon:hover { 
+    transform: scale(1.2);
+}
+
+/* ---  Conteudo Principal  --- */
+.container-custom {
+    background-color: #f9e7e5;
+    border: 3px solid #b46490;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.img-thumbnail {
+    width: 80px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.product-info {
+    background-color: #f9e7e5;
+    border: 3px solid #b46490;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.related-products {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.btn-custom {
+    background-color: #c07588;
+    color: #f9e7e5;
+    margin-top: 15px;
+}
+
+.price {
+    font-size: 2em;
+    color: #a34756;
+    font-weight: bold;
+}

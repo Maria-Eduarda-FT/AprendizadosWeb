@@ -29,19 +29,25 @@
     });
 
     const swiper2 = new Swiper('.swiper2', {
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next2',
-            prevEl: '.swiper-button-prev2',
-        },
-        pagination: {
-            el: '.swiper-pagination2',
-            clickable: true,
-        },
-    });
+    loop: true,
+    slidesPerView: 5,
+    spaceBetween: 10,
+    watchOverflow: true, // forçar a navegação/paginação
+    pagination: {
+        el: '.swiper-pagination2',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next2',
+        prevEl: '.swiper-button-prev2',
+    },
+})
 
     const swiper3 = new Swiper('.swiper3', {
         loop: true,
+        slidesPerView: 5,
+        spaceBetween: 10,
+        watchOverflow: true, // forçar a navegação/paginação
         navigation: {
             nextEl: '.swiper-button-next3',
             prevEl: '.swiper-button-prev3',
@@ -57,49 +63,54 @@
     <body>
 
     <!--   Menu  de  navegação   -->
-    <header class="navbar">
-            <img src="IMGS/Logo.webp" alt="Logo" class="logo">
-            <ul>
-                <li class="item"><a href="#aromas">Aromas</a>
-                    <div class="popup">
+    <header class="row navbar">
+            
+        <ul>
+            <li><img src="IMGS/Logo.webp" alt="Logo" class="logo"></li>
+            <li class="item"><a href="#aromas">Aromas</a>
+                <div class="popup">
+                    <ul>
+                        <li class="textoPopup"  href="#">Amadeirado</li>
+                        <li class="textoPopup"  href="#">Cítrico</li>
+                        <li class="textoPopup"  href="#">Floral</li>
+                        <li class="textoPopup"  href="#">Adocicado</li>
+                        <li class="textoPopup"  href="#">Ver Tudo</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="item"><a href="#ambientes">Ambientes</a>
+                <div class="popup">
                         <ul>
-                          <li class="textoPopup">Amadeirado</li>
-                          <li class="textoPopup">Cítrico</li>
-                          <li class="textoPopup">Floral</li>
-                          <li class="textoPopup">Adocicado</li>
-                          <li class="textoPopup">Ver Tudo</li>
+                        <li class="textoPopup"  href="#">Escritório</li>
+                        <li class="textoPopup"  href="#">Sala de Estar</li>
+                        <li class="textoPopup"  href="#">Lavabo</li>
+                        <li class="textoPopup"  href="#">Cozinha</li>
                         </ul>
-                    </div>
-                </li>
-                <li class="item"><a href="#ambientes">Ambientes</a>
-                    <div class="popup">
-                        <ul>
-                          <li class="textoPopup">Escritório</li>
-                          <li class="textoPopup">Sala de Estar</li>
-                          <li class="textoPopup">Lavabo</li>
-                          <li class="textoPopup">Cozinha</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="item"><a href="#paraCasa">Para Casa</a>
-                    <div class="popup">
-                        <ul>
-                          <li class="textoPopup">Sabonetes</li>
-                          <li class="textoPopup">Bandeijas</li>
-                          <li class="textoPopup">Toalhas</li>
-                          <li class="textoPopup">Refis</li>
-                          <li class="textoPopup">Tapetes</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="item"><a href="#difusores">Difusores</a></li>
-                <li class="item"><a href="#maisVendidos">Mais Vendidos</a></li>
-                <li class="item"><img href="sacola.html"><img src="IMGS/sacola.png" alt="Sacola" class="sacola-icon"></img></a></li>
-            </ul>
+                </div>
+            </li>
+            <li class="item"><a href="#paraCasa">Para Casa</a>
+                <div class="popup">
+                    <ul>
+                        <li class="textoPopup">Sabonetes</li>
+                        <li class="textoPopup">Bandeijas</li>
+                        <li class="textoPopup">Toalhas</li>
+                        <li class="textoPopup">Refis</li>
+                        <li class="textoPopup">Tapetes</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="item"><a href="#difusores">Difusores</a></li>
+            <li class="item"><a href="#maisVendidos">Mais Vendidos</a></li>
+            <li class="item">
+                <a href="sacola.html">
+                    <img src="IMGS/sacola.png" alt="Sacola" class="sacola-icon">
+                </a>
+            </li>
+        </ul>
     </header>
     
     <!--   Página  Inicial   -->
-    <section id="pagInicial">
+    <section class="row" id="pagInicial">
         <div id="esquerda">
             <div id="amoeba">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -113,23 +124,26 @@
         <div id="direita">
             <div class="swiper swiper1">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" >
-                        <img src="IMGS/conjBanheira.jfif" alt="Imagem1">
+                    <div class="swiper-slide swiper-slide1" >
+                        <a href="item.html">
+                            <img src="IMGS/conjBanheira.jfif" alt="Imagem1">
                         <p>Descrição vale tal R$300,00</p>
+                        </a>
+                        
                     </div>
-                    <div class="swiper-slide" >
+                    <div class="swiper-slide swiper-slide1" >
                         <img src="IMGS/conjComRefil.jfif" alt="Imagem2">
                         <p>Descrição vale tal R$300,00</p>
                     </div>
-                    <div class="swiper-slide" >
+                    <div class="swiper-slide swiper-slide1" >
                         <img src="IMGS/conjEscova+Sab.jfif" alt="Imagem3">
                         <p>Descrição vale tal R$300,00</p>
                     </div>
-                    <div class="swiper-slide" >
+                    <div class="swiper-slide swiper-slide1" >
                         <img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem4">
                         <p>Descrição vale tal R$300,00</p>
                     </div>
-                    <div class="swiper-slide" >
+                    <div class="swiper-slide swiper-slide1" >
                         <img src="IMGS/conjVelasDif.jfif" alt="Imagem5">
                         <p>Descrição vale tal R$300,00</p>
                     </div>
@@ -142,13 +156,17 @@
     </section>
 
     <!--   Aromas   --> 
-    <section id="aromas">
+    <section class="row p-5" id="aromas">
         <h1 class="titulo">Aromas</h1>
         <div class="swiper swiper2">
             <div class="swiper-wrapper">
-                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjVelaRosa.jfif" alt="Imagem4"></div>
-                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem5"></div>
-                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjPinceisBeige.jfif" alt="Imagem6"></div>
+                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjVelaRosa.jfif" alt="Imagem6"></div>
+                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem7"></div>
+                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjPinceisBeige.jfif" alt="Imagem8"></div>
+                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjComRefil.jfif" alt="Imagem9"></div>
+                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjVelasDif.jfif" alt="Imagem10"></div>
+                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem11"></div>
+                <div class="swiper-slide swiper-slide2"><img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem12"></div>
             </div>
             <div class="swiper-button-prev swiper-button-prev2"></div>
             <div class="swiper-button-next swiper-button-next2"></div>
@@ -157,20 +175,32 @@
     </section>
    
     <!--   Ambientes       -->
-    <section  id="ambientes">
+    <section class="row p-5" id="ambientes">
         <h1 class="titulo">Ambientes</h1>
         <div class="swiper swiper3">
             <div class="swiper-wrapper">
                 <div class="swiper-slide swiper-slide3">
-                    <img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem7">
+                    <img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem13">
                     <p>Descrição vale tal R$400,00</p>
                 </div>
                 <div class="swiper-slide swiper-slide3">
-                    <img src="IMGS/conjVelasDif.jfif" alt="Imagem5">
+                    <img src="IMGS/conjVelasDif.jfif" alt="Imagem14">
                     <p>Descrição vale tal R$350,00</p>
                 </div>
                 <div class="swiper-slide swiper-slide3">
-                    <img src="IMGS/conjPinceisBeige.jfif" alt="Imagem6">
+                    <img src="IMGS/conjPinceisBeige.jfif" alt="Imagem15">
+                    <p>Descrição vale tal R$250,00</p>
+                </div>
+                <div class="swiper-slide swiper-slide3">
+                    <img src="IMGS/conjBanheira.jfif" alt="Imagem16">
+                    <p>Descrição vale tal R$250,00</p>
+                </div>
+                <div class="swiper-slide swiper-slide3">
+                    <img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17">
+                    <p>Descrição vale tal R$250,00</p>
+                </div>
+                <div class="swiper-slide swiper-slide3">
+                    <img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18">
                     <p>Descrição vale tal R$250,00</p>
                 </div>
             </div>
@@ -180,10 +210,10 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
+    <!-- Rodapé 
     <footer>
         <p>Rua Alegre, 123, Cidade Brasileira | Tel: (12) 3456-7890 | email@hotmail.com.br</p>
         <p>Siga a gente nas redes sociais!</p>
-    </footer>
+    </footer>-->
 </body>
 </html>
