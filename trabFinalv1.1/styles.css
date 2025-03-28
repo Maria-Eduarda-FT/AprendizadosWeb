@@ -117,10 +117,14 @@ body {
     width: 50%;
     height: 100%;
     justify-content: center;
+    transition: transform 0.3s ease;
+}
+#amoeba:hover{
+    transform: scale(1.04);
 }
 #textoInicio {
-    position: absolute;
-    top: 50%;
+    position: relative;
+    top: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
@@ -195,6 +199,7 @@ body {
     background-color: #c98895;
     position: relative;
     flex-direction:row;
+    z-index: 1;
 }
 .titulo{
     display: flex;
@@ -248,6 +253,52 @@ body {
     color: #fff;
     background: #007aff;
 }
+/* ---  Entre em contato  --- */
+#EntreContato{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #f9e7e5;
+}
+#esq{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.VelaVDif{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: -35px;
+}
+#dir{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display:inline;
+    padding-left: 2%; 
+}
+#tituloLDD{
+    display: flex;
+    font-family: "Notable", sans-serif;
+    color: #000;
+    font-size: 100px;
+    position: relative; 
+    
+}
+.texto{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;  
+    letter-spacing: 1px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
 
 /* **    AMBIENTES    ** */
 #ambientes{
@@ -259,6 +310,7 @@ body {
     background-color: #ee9dad;
     position: relative;
     flex-direction: row;
+    z-index: 1;
 }
 .titulo{
     display: flex;
@@ -312,6 +364,41 @@ body {
 .swiper3 .swiper-pagination-bullet-active {
     color: #fff;
     background: #fff;
+}
+/* ---  Nossa Historia  --- */
+#NossaHist{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #f9e7e5;
+}
+#E{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display:inline;
+    padding-left: 2%;
+}
+.NossaH{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-right: -35px;
+}
+#D{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.texto{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;  
+    letter-spacing: 1px;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 /* Estilos do rodapé */
