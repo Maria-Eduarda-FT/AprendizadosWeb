@@ -15,7 +15,7 @@
     <script src="javaScript.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css">
 </head>
 
 
@@ -25,43 +25,19 @@
 
         <ul>
             <li><img src="IMGS/logo.webp" alt="Logo" class="logo"></li>
-            <li class="item"><a href="#aromas">Aromas</a>
-                <div class="popup">
-                    <ul>
-                        <li class="textoPopup" href="#">Amadeirado</li>
-                        <li class="textoPopup" href="#">Cítrico</li>
-                        <li class="textoPopup" href="#">Floral</li>
-                        <li class="textoPopup" href="#">Adocicado</li>
-                        <li class="textoPopup" href="#">Ver Tudo</li>
-                    </ul>
-                </div>
-            </li>
-            <li class="item"><a href="#ambientes">Ambientes</a>
-                <div class="popup">
-                    <ul>
-                        <li class="textoPopup" href="#">Escritório</li>
-                        <li class="textoPopup" href="#">Sala de Estar</li>
-                        <li class="textoPopup" href="#">Lavabo</li>
-                        <li class="textoPopup" href="#">Cozinha</li>
-                    </ul>
-                </div>
-            </li>
-            <li class="item"><a href="#paraCasa">Para Casa</a>
-                <div class="popup">
-                    <ul>
-                        <li class="textoPopup">Sabonetes</li>
-                        <li class="textoPopup">Bandeijas</li>
-                        <li class="textoPopup">Toalhas</li>
-                        <li class="textoPopup">Refis</li>
-                        <li class="textoPopup">Tapetes</li>
-                    </ul>
-                </div>
-            </li>
+            <li class="item"><a href="#aromas">Aromas</a></li>
+            <li class="item"><a href="#ambientes">Ambientes</a></li>
+            <li class="item"><a href="#paraCasa">Para Casa</a></li>
             <li class="item"><a href="#difusores">Difusores</a></li>
-            <li class="item"><a href="#maisVendidos">Monte Seu Pedido</a></li>
+            <li class="item"><a href="#montePedido"><i class="fi fi-sr-select"></i></a></li>
             <li class="item">
                 <a href="sacola.html">
-                    <img src="IMGS/sacola.png" alt="Sacola" class="sacola-icon">
+                    <i class="fi fi-rr-shopping-cart sacola-icon"></i>
+                </a>
+            </li>
+            <li class="item">
+                <a href="adm.html">
+                    <i class="fi fi-rr-settings"></i>
                 </a>
             </li>
         </ul>
@@ -78,35 +54,39 @@
                 </svg>
             </div>
             <div id="textoInicio">
-                <h1>Construindo muito <br>mais que uma <span class="spanInicio">casa</span>,<br> o seu <span
-                        class="spanInicio">lar</span></h1>
+                <h1>Construindo muito <br>mais que uma <span class="spanInicio">casa</span>,<br> o seu <spanclass="spanInicio">lar</span></h1>
             </div>
         </div>
         <div id="direita">
             <div class="swiper swiper1">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper img-fluid">
                     <div class="swiper-slide swiper-slide1">
                         <a href="item.html">
                             <img src="IMGS/conjBanheira.jfif" alt="Imagem1">
-                            <p>Descrição vale tal R$300,00</p>
+                            <p class="nome">Vela Rosa</p>
+                            <p class="preco">R$ 39,90</p>
                         </a>
 
                     </div>
                     <div class="swiper-slide swiper-slide1">
                         <img src="IMGS/conjComRefil.jfif" alt="Imagem2">
-                        <p>Descrição vale tal R$300,00</p>
+                        <p class="nome">Vela Rosa</p>
+                        <p class="preco">R$ 39,90</p>
                     </div>
                     <div class="swiper-slide swiper-slide1">
                         <img src="IMGS/conjEscova+Sab.jfif" alt="Imagem3">
-                        <p>Descrição vale tal R$300,00</p>
+                        <p class="nome">Vela Rosa</p>
+                        <p class="preco">R$ 39,90</p>
                     </div>
                     <div class="swiper-slide swiper-slide1">
                         <img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem4">
-                        <p>Descrição vale tal R$300,00</p>
+                        <p class="nome">Vela Rosa</p>
+                        <p class="preco">R$ 39,90</p>
                     </div>
                     <div class="swiper-slide swiper-slide1">
                         <img src="IMGS/conjVelasDif.jfif" alt="Imagem5">
-                        <p>Descrição vale tal R$300,00</p>
+                        <p class="nome">Vela Rosa</p>
+                        <p class="preco">R$ 39,90</p>
                     </div>
                 </div>
                 <div class="swiper-button-prev swiper-button-prev1" style=" color: #ee9dad"></div>
@@ -116,7 +96,7 @@
         </div>
     </section>
 
-    <!-- Aromas -->
+    <!--    Aromas    -->
     <section class="row p-5" id="aromas">
         <h1 class="titulo">Aromas</h1>
         <div class="btn-group">
@@ -124,7 +104,7 @@
             <button class="btn btn-dark " onclick="openTab('tab2')">Amadeirado</button>
             <button class="btn btn-dark " onclick="openTab('tab3')">Cítrico</button>
             <button class="btn btn-dark " onclick="openTab('tab4')">Floral</button>
-            <button class="btn btn-dark " onclick="filtrar('tab5')">Adocicado</button>
+            <button class="btn btn-dark " onclick="openTab('tab5')">Adocicado</button>
         </div>
 
         <div class="swiper swiper2 tabCima" id="tab1" style="display: none;">
@@ -145,7 +125,6 @@
             <div class="swiper-button-next swiper-button-next2"></div>
             <div class="swiper-pagination swiper-pagination2"></div>
         </div>
-
         <div class="swiper swiper2 tabCima" id="tab2" style="display: none;">
             <div class="swiper-wrapper">
                 <div class="swiper-slide aroma amadeirado "><img src="IMGS/conjVelaRosa.jfif" alt="Amadeirado"></div>
@@ -158,7 +137,6 @@
             <div class="swiper-button-next swiper-button-next2"></div>
             <div class="swiper-pagination swiper-pagination2"></div>
         </div>
-
         <div class="swiper swiper2 tabCima" id="tab3" style="display: none;">
             <div class="swiper-wrapper">
                 <div class="swiper-slide aroma citrico "><img src="IMGS/conjVolumeBranco.jfif" alt="Cítrico"></div>
@@ -172,7 +150,6 @@
             <div class="swiper-button-next swiper-button-next2"></div>
             <div class="swiper-pagination swiper-pagination2"></div>
         </div>
-
         <div class="swiper swiper2 tabCima" id="tab4" style="display: none;">
             <div class="swiper-wrapper">
                 <div class="swiper-slide aroma citrico "><img src="IMGS/conjVolumeBranco.jfif" alt="Cítrico"></div>
@@ -186,7 +163,6 @@
             <div class="swiper-button-next swiper-button-next2"></div>
             <div class="swiper-pagination swiper-pagination2"></div>
         </div>
-
         <div class="swiper swiper2 tabCima" id="tab5" style="display: none;">
             <div class="swiper-wrapper">
                 <div class="swiper-slide aroma citrico "><img src="IMGS/conjVolumeBranco.jfif" alt="Cítrico"></div>
@@ -200,7 +176,6 @@
             <div class="swiper-button-next swiper-button-next2"></div>
             <div class="swiper-pagination swiper-pagination2"></div>
         </div>
-
     </section>
 
     <!--   Entre em contato   -->
@@ -225,13 +200,13 @@
     <section class="row" id="ambientes">
         <h1 class="titulo">Ambientes</h1>
         <div class="btn-group ">
-            <button class="btn btn-dark" onclick="filtrar('tab6')">Tudo</button>
-            <button class="btn btn-dark" onclick="filtrar('tab7')">Escritório</button>
-            <button class="btn btn-dark" onclick="filtrar('tab8')">Sala de Estar</button>
-            <button class="btn btn-dark" onclick="filtrar('tab9')">Lavabo</button>
-            <button class="btn btn-dark" onclick="filtrar('tab10')">Cozinha</button>
+            <button class="btn btn-dark" onclick="openTab('tab6')">Tudo</button>
+            <button class="btn btn-dark" onclick="openTab('tab7')">Escritório</button>
+            <button class="btn btn-dark" onclick="openTab('tab8')">Sala de Estar</button>
+            <button class="btn btn-dark" onclick="openTab('tab9')">Lavabo</button>
+            <button class="btn btn-dark" onclick="openTab('tab10')">Cozinha</button>
         </div>
-        <div class="swiper swiper3 tabBaixo" id="tab6"  style="display: block;">
+        <div class="swiper swiper3 tabBaixo" id="tab6" style="display: none;">
             <div class="swiper-wrapper">
                 <div class="swiper-slide swiper-slide3"><img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem13"></div>
                 <div class="swiper-slide swiper-slide3"> <img src="IMGS/conjVelasDif.jfif" alt="Imagem14"></div>
@@ -249,7 +224,7 @@
                 <div class="swiper-slide swiper-slide3"><img src="IMGS/conjAmetista.jfif" alt="Imagem13"></div>
                 <div class="swiper-slide swiper-slide3"> <img src="IMGS/conjClassico.jfif" alt="Imagem14"></div>
                 <div class="swiper-slide swiper-slide3"><img src="IMGS/conjComRefil.jfif" alt="Imagem15"></div>
-                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjLavabo.jfif" alt="Imagem16"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem16"></div>
                 <div class="swiper-slide swiper-slide3"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17"></div>
                 <div class="swiper-slide swiper-slide3"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18"></div>
             </div>
@@ -270,31 +245,166 @@
             <div class="swiper-button-next swiper-button-next3"></div>
             <div class="swiper-pagination"></div>
         </div>
-
+        <div class="swiper swiper3 tabBaixo" id="tab9" style="display: none;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjLavabo.jfif" alt="Imagem13"></div>
+                <div class="swiper-slide swiper-slide3"> <img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem14"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjPinceisBeige.jfif" alt="Imagem15"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjBanheira.jfif" alt="Imagem16"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18"></div>
+            </div>
+            <div class="swiper-button-prev swiper-button-prev3"></div>
+            <div class="swiper-button-next swiper-button-next3"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper swiper3 tabBaixo" id="tab10" style="display: none;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjLavabo.jfif" alt="Imagem13"></div>
+                <div class="swiper-slide swiper-slide3"> <img src="IMGS/velaRosaconjConcha.jfif" alt="Imagem14"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjPinceisBeige.jfif" alt="Imagem15"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjBanheira.jfif" alt="Imagem16"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17"></div>
+                <div class="swiper-slide swiper-slide3"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18"></div>
+            </div>
+            <div class="swiper-button-prev swiper-button-prev3"></div>
+            <div class="swiper-button-next swiper-button-next3"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
     <!--   Nossa Historia   -->
     <section class="container-fluid" id="NossaHist">
-
-        <div id="E">
+        <div class="E">
             <h2 id="tituloLDD">Nossa História</h2>
             <p class="texto">Quer dar um toque único ao seu espaço? Nossa equipe está pronta para criar uma decoração
                 personalizada que combina com o seu estilo e personalidade. Clique no botão abaixo e entre em contato
                 conosco para começar a transformar seu ambiente com exclusividade e sofisticação!</p>
-
+            <p class="texto">Quer dar um toque único ao seu espaço? Nossa equipe está pronta para criar uma decoração
+                personalizada que combina com o seu estilo e personalidade. Clique no botão abaixo e entre em contato
+                conosco para começar a transformar seu ambiente com exclusividade e sofisticação!</p>
+            <p class="texto">Quer dar um toque único ao seu espaço? Nossa equipe está pronta para criar uma decoração
+                personalizada que combina com o seu estilo e personalidade. Clique no botão abaixo e entre em contato
+                conosco para começar a transformar seu ambiente com exclusividade e sofisticação!</p>
         </div>
-        <div id="D">
+        <div class="D">
             <img class="img img-fluid NossaH" src="IMGS/Empresaria2.jpg" alt="">
 
         </div>
     </section>
 
-    <!-- Rodapé 
-    <footer>
-        <p>Rua Alegre, 123, Cidade Brasileira | Tel: (12) 3456-7890 | email@hotmail.com.br</p>
-        <p>Siga a gente nas redes sociais!</p>
-    </footer>-->
+    <!--   Para Casa      -->
+    <section class="row" id="paraCasa">
+        <h1 class="titulo">Para Casa</h1>
+        <div class="btn-group ">
+            <button class="btn btn-dark" onclick="openTab('tab11')">Tudo</button>
+            <button class="btn btn-dark" onclick="openTab('tab12')">Bandeijas</button>
+            <button class="btn btn-dark" onclick="openTab('tab13')">Toalhas</button>
+            <button class="btn btn-dark" onclick="openTab('tab14')">Velas</button>
+            <button class="btn btn-dark" onclick="openTab('tab15')">Tapetes</button>
+        </div>
+        <div class="swiper swiper4 tabCasa" id="tab11" style="display: none;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem13"></div>
+                <div class="swiper-slide swiper-slide4"> <img src="IMGS/conjVelasDif.jfif" alt="Imagem14"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjPinceisBeige.jfif" alt="Imagem15"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjBanheira.jfif" alt="Imagem16"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18"></div>
+            </div>
+            <div class="swiper-button-prev swiper-button-prev4"></div>
+            <div class="swiper-button-next swiper-button-next4"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper swiper4 tabCasa" id="tab12" style="display: none;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjAmetista.jfif" alt="Imagem13"></div>
+                <div class="swiper-slide swiper-slide4"> <img src="IMGS/conjClassico.jfif" alt="Imagem14"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjComRefil.jfif" alt="Imagem15"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjLavabo.jfif" alt="Imagem16"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18"></div>
+            </div>
+            <div class="swiper-button-prev swiper-button-prev4"></div>
+            <div class="swiper-button-next swiper-button-next4"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper swiper4 tabCasa" id="tab13" style="display: none;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem13"></div>
+                <div class="swiper-slide swiper-slide4"> <img src="IMGS/conjVelasDif.jfif" alt="Imagem14"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjPinceisBeige.jfif" alt="Imagem15"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjBanheira.jfif" alt="Imagem16"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18"></div>
+            </div>
+            <div class="swiper-button-prev swiper-button-prev4"></div>
+            <div class="swiper-button-next swiper-button-next4"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper swiper4 tabCasa" id="tab14" style="display: none;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem13"></div>
+                <div class="swiper-slide swiper-slide4"> <img src="IMGS/conjVelasDif.jfif" alt="Imagem14"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjPinceisBeige.jfif" alt="Imagem15"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjBanheira.jfif" alt="Imagem16"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18"></div>
+            </div>
+            <div class="swiper-button-prev swiper-button-prev4"></div>
+            <div class="swiper-button-next swiper-button-next4"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper swiper4 tabCasa" id="tab15" style="display: none;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjMinimalistaVerde.jfif" alt="Imagem13"></div>
+                <div class="swiper-slide swiper-slide4"> <img src="IMGS/conjVelasDif.jfif" alt="Imagem14"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjPinceisBeige.jfif" alt="Imagem15"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjBanheira.jfif" alt="Imagem16"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjEscova+Sab.jfif" alt="Imagem17"></div>
+                <div class="swiper-slide swiper-slide4"><img src="IMGS/conjVolumeBranco.jfif" alt="Imagem18"></div>
+            </div>
+            <div class="swiper-button-prev swiper-button-prev4"></div>
+            <div class="swiper-button-next swiper-button-next4"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="rodape">
+        <div class="E">
+            <div class="container-fluid">
+                <img src="IMGS/logo.webp" alt="Logo" class="float-start img-fluid w-25 logo imgRodape">
+                <p class="col mt-3">Construindo muito<br>mais que uma casa <br> <b>O seu Lar</b></p>
+            </div>
+            <div class="container-fluid">
+                <p class="col mt-5"><b>Siga a gente</b></p>
+                <a class="col" href="">
+                    <i class="fi fi-brands-instagram"></i>
+                </a>
+                <a class="col" href="">
+                    <i class="fi fi-brands-facebook"></i>
+                </a>
+            </div>
+            <div class="container-fluid">
+                <p class="col"><b>Entre em Contato</b></p>
+                <div class="row">
+                    <i class="fi fi-rr-envelope col"></i>
+                    <p class="col">lorenadayannaromas@hotmail.com</p>
+                </div>
+                
+                <div class="row">
+                    <i class="fi fi-rr-mobile-notch col"></i>
+                    <p class="col">+55 (62) 99652-4441</p>
+                </div>   
+            </div>
+        </div>
+        <div class="D">
+            <p class="dRodape"><b>Sua casa, Seu estilo, Sua Essência</b></p>
+        </div>
+        
+    
+    </footer>
 </body>
 
 </html>

@@ -42,6 +42,7 @@ body {
     padding: 0;
 }
 .navbar ul li a {
+    position: relative;
     text-decoration: none;
     color: black;
     font-size: 18px;  
@@ -57,46 +58,12 @@ body {
     display: flex;
     flex-direction: column; 
 }
-.popup {
-    display: none;
-    position: absolute;
-    top: 100%;
-    padding: 10px;
-    text-align: center;
-    background-color: #f9e7e5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #f9e7e5;
-    border-radius: 10px;
-    z-index: 1;
-}
-.popup ul {
-    list-style: none; 
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-.item:hover .popup {
-    display: block; 
-}
-.textoPopup{
-    color: #000;
-    transition: 500ms;
-    padding: 5px;;
-} 
-.textoPopup:hover{
-    transform: scale(1.2);
-}
 
-.sacola-icon {
-    width: 30px;
-    height: 30px;
-    padding: auto;
+.fi{
+    position: relative;
+    font-size: 25px;
+    padding: 0;
     cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.sacola-icon:hover { 
-    transform: scale(1.2);
 }
 
 /*   PÁGINA PRINCIPAL   */
@@ -143,34 +110,35 @@ body {
     align-items: center;
 }
 .swiper1 {
+    position: relative;
     width: 60%; 
     height: 60%; 
-    object-fit: cover;
-    background-color: #f9e7e5;
+    object-fit:contain;
 }
-.swiper-slide {
+.swiper-slide1 { 
     text-align: center;
     font-size: 18px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    justify-content: center; 
+   /** background-color: #ee9dad;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  **/
 }
-.swiper-slide img {
-    width: 80%;
-    height: 85%;
+.swiper-slide1 img {
+    width: 75%;
+    height: 70%;
     border-radius: 15px; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 .swiper-slide p {
     color: black;
     font-size: 18px;
     font-family: "Georgia", serif;
+    padding: auto;
 }
 .swiper-button-prev1, .swiper-button-next1 {
     font-size: 30px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 .swiper-pagination1-bullet {
     text-align: center;
@@ -218,7 +186,7 @@ body {
 .swiper2{
     position: relative;
     object-fit: cover;
-    background-color: #c98895;
+    background-color: #c98895; 
 }
 .swiper-slide2 {
     text-align: center;
@@ -228,15 +196,15 @@ body {
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 .swiper-slide2:hover{
     transform: scale(1.04);
 }
 .swiper-slide2 img {
-    width: 90%;
+    width: 80%;
     height: 85%;
-    border-radius: 10px; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 .swiper-slide2 p {
     color: black;
@@ -343,7 +311,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 7px;
 }
 .swiper-slide3 img {
     width: 90%;
@@ -368,11 +336,11 @@ body {
     opacity: 1;
     background: rgba(0, 0, 0, 0.2);
 }
-
 .swiper3 .swiper-pagination-bullet-active {
     color: #fff;
     background: #fff;
 }
+
 /* ---  Nossa Historia  --- */
 #NossaHist{
     position: relative;
@@ -381,7 +349,7 @@ body {
     width: 100%;
     background-color: #f9e7e5;
 }
-#E{
+.E{
     position: relative;
     width: 50%;
     height: 100%;
@@ -394,7 +362,7 @@ body {
     height: 100%;
     margin-right: -35px;
 }
-#D{
+.D{
     position: relative;
     width: 50%;
     height: 100%;
@@ -408,14 +376,35 @@ body {
     padding-top: 3%;
     padding-bottom: 3%;
 }
-
+/* ---  Para  Casa  --- */
+#paraCasa{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #79485a;
+}
 /* Estilos do rodapé */
 footer {
-    width: 100vw;
-    background-color: #e91e63;
-    color: white;
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #f9e7e5;
+    color: black;
+    font-size: larger;
     text-align: center;
     padding: 15px;
+}
+.dRodape{
+    position:absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: xx-large;
+}
+.imgRodape{
+    width: 10%;
+    height: 10%;
 }
 
 @media screen and (max-width: 768px) {

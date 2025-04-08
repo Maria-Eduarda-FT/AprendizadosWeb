@@ -41,32 +41,56 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
+    const swiper4 = new Swiper('.swiper4', {
+        loop: true,
+        slidesPerView: 5,
+        spaceBetween: 7,
+        watchOverflow: true, // forçar a navegação/paginação
+        navigation: {
+            nextEl: '.swiper-button-next4',
+            prevEl: '.swiper-button-prev4',
+        },
+        pagination: {
+            el: '.swiper-pagination4',
+            clickable: true,
+        },
+    });
+
     //global
     window.swiper2 = swiper2;
     window.swiper3 = swiper3;
+    window.swiper4 = swiper4;
 });
 
 
 document.addEventListener('DOMContentLoaded', function() {
     openTab('tab1'); 
-    openTab('tab6'); 
+    openTab('tab6');
+    openTab('tab11'); 
 });
 function openTab(tabId) {
     var tabCima = document.querySelectorAll('.tabCima'); 
-    var tabBaixo = document.querySelectorAll('.tabBaixo');  
-    if (tabId<="tab5"){
-        tabCima.forEach(function(tab) {
-        tab.style.display = 'none';
-    });
-    } else{
-        tabBaixo.forEach(function(tab) {
-        tab.style.display = 'none';
-    });
-    }
+    var tabBaixo = document.querySelectorAll('.tabBaixo'); 
+    var tabCasa = document.querySelectorAll('.tabCasa'); 
     
+    var tabNum = parseInt(tabId.replace('tab', ''));
+    
+    if (tabNum >= 1 && tabNum <= 5) {
+        tabCima.forEach(function(tab) {
+            tab.style.display = 'none';
+        });
+    } else if (tabNum >= 6 && tabNum <= 10) {
+        tabBaixo.forEach(function(tab) {
+            tab.style.display = 'none';
+        });
+    } else if (tabNum >= 11 && tabNum <= 15) {
+        tabCasa.forEach(function(tab) {
+            tab.style.display = 'none';
+        });
+    }
 
     var activeTab = document.getElementById(tabId);
-        activeTab.style.display = 'block';
+    activeTab.style.display = 'block';
 }
 
 
