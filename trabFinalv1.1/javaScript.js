@@ -71,46 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-    fetch('produtos.php')
-        .then(response => response.json())
-        .then(produtosPorCategoria => {
-            Object.keys(produtosPorCategoria).forEach((categoria, index) => {
-                const tab = document.getElementById('tab' + (index + 1)); 
-                const swiperWrapper = tab.querySelector('.swiper-wrapper'); 
-
-                //adiciona os slides dentro do swiper-wrapper
-                produtosPorCategoria[categoria].forEach(produto => {
-                    const slide = document.createElement('div');
-                    slide.classList.add('swiper-slide');
-                    slide.innerHTML = `
-                        <img src="${produto.imagem}" alt="${produto.titulo}">
-                        <p><strong>${produto.titulo}</strong></p>
-                        <p>${produto.descricao}</p>
-                        <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
-                        <p>Quantidade: ${produto.quantidade}</p>
-                    `;
-                    swiperWrapper.appendChild(slide);
-                });
-
-                // Reinitialize o swiper para a tab
-                new Swiper(`#tab${index + 1} .swiper`, {
-                    loop: true,
-                    slidesPerView: 5,
-                    spaceBetween: 10,
-                    pagination: {
-                        el: `#tab${index + 1} .swiper-pagination`,
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: `#tab${index + 1} .swiper-button-next`,
-                        prevEl: `#tab${index + 1} .swiper-button-prev`,
-                    },
-                });
-            });
-        })
-        .catch(error => {
-            console.error('Erro ao carregar produtos:', error);
-        });
+    
 });
 
 document.addEventListener('DOMContentLoaded', function() {
