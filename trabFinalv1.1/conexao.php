@@ -1,15 +1,15 @@
 <?php
 $host = 'localhost';
-$port = '5432';
-$dbname = 'ldaBanco';
-$user = 'postgres';
-$password = '254100';
+$dbname = 'ldabanco';
+$user = 'root';
+$password = '';
 
 try {
-    $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo 'Conexão bem sucedida';
+    // echo 'Conectado com sucesso';
 } catch (PDOException $e) {
-    die("Erro na conexão: " . $e->getMessage());
+    echo 'Erro na conexão: ' . $e->getMessage();
+    exit;
 }
 ?>

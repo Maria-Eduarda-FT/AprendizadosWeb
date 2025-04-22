@@ -5,9 +5,18 @@ let butaoCompra = "Compre agora";
 let AddCarrinho = "Adicionar ao Carrinho";
 let imgPrincipal = "IMGS/conjVolumeBranco.jfif";
 
-document.addEventListener("DOMContentLoaded", function Carrega(){
-    document.getElementById('tituloItem').innerHTML = tituloItem;
-    document.getElementById('precoItem').innerHTML = precoItem;
-    document.getElementById('descricaoItem').innerHTML = descricaoItem;
-    document.getElementById('imgPrincipal').src = imgPrincipal;
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const produto = JSON.parse(localStorage.getItem("produtoSelecionado"));
+  
+    if (produto) {
+      document.getElementById('tituloItem').innerHTML = produto.titulo;
+      document.getElementById('precoItem').innerHTML = produto.preco;
+      document.getElementById('descricaoItem').innerHTML = produto.descricao;
+      document.getElementById('imgPrincipal').src = produto.img;
+    } else {
+      document.getElementById('tituloItem').innerHTML = "Produto não encontrado";
+      document.getElementById('precoItem').innerHTML = "R$ 0,00";
+      document.getElementById('descricaoItem').innerHTML = "Descrição indisponível.";
+      document.getElementById('imgPrincipal').src = "IMGS/default.jpg"; // ou outro placeholder
+    }
+  });

@@ -2,16 +2,19 @@
 header('Content-Type: application/json');
 include 'conexao.php';
 
-try { 
+try {
     $query = $pdo->query("SELECT titulo, descricao, imagem, categoria, preco, quantidade FROM produtos");
     $produtos = $query->fetchAll(PDO::FETCH_ASSOC);
-     
+
     $produtosPorCategoria = [];
+
     foreach ($produtos as $produto) {
         $produtosPorCategoria[$produto['categoria']][] = $produto;
+        $produtosPorCategoria['todos'][] = $produto;
     }
-    
-    echo json_encode($produtosPorCategoria);  
+
+    echo json_encode($produtosPorCategoria);
+
 } catch (PDOException $e) {
     echo json_encode(['erro' => $e->getMessage()]);
 }
