@@ -24,7 +24,6 @@
             $caminhoDestino = 'IMGS/' . $imagemNome;
 
             if (move_uploaded_file($imagemTmp, $caminhoDestino)) {
-                // Usar PDO com declarações preparadas
                 $sql = "INSERT INTO produtos (titulo, descricao, imagem, categoria, preco, quantidade) 
                         VALUES (:titulo, :descricao, :imagem, :categoria, :preco, :quantidade)";
                 

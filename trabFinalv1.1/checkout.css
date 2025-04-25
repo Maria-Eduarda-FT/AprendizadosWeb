@@ -1,0 +1,134 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ee9dad;
+    color: #333;
+    padding: 2rem;
+}
+
+/* Container geral */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #FFF0F5; /* rosa mais suave */
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.3);
+}
+
+/* Títulos */
+h1, h2 {
+    color: #79485a; /* rosa escuro estilo "rosa queimado" */
+    margin-bottom: 1rem;
+}
+
+/* Seções de pedido e formulário */
+.resumo-pedido, form {
+    margin-bottom: 2rem;
+}
+
+/* Itens do pedido */
+#itens-pedido {
+    margin: 1rem 0;
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #79485a;
+    border-radius: 10px;
+}
+
+.total {
+    font-weight: bold;
+    color: #79485a;
+    margin-top: 1rem;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #79485a;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #79485a;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #79485a;
+    box-shadow: 0 0 5px #f9e7e5;
+}
+
+/* Estilização especial para opções de pagamento */
+input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+/* Layout em linha para validade e CVV */
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Botão finalizar compra */
+.btn-finalizar {
+    display: inline-block;
+    background-color: #79485a;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-finalizar:hover {
+    background-color: #79485a;
+}
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .btn-finalizar {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    input, select {
+        padding: 0.65rem;
+        font-size: 1rem;
+    }
+
+    .total {
+        text-align: right;
+        font-size: 1.1rem;
+    }
+}

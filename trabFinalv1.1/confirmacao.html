@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Confirmada</title>
+    <link rel="stylesheet" href="seu-arquivo-de-estilos.css">
+    <style>
+        .confirmacao {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .confirmacao h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .confirmacao p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .btn-voltar {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .sucesso-icon {
+            font-size: 80px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="confirmacao">
+            <div class="sucesso-icon">✓</div>
+            <h1>Compra Confirmada!</h1>
+            <p>Sua compra foi realizada com sucesso. Você receberá um e-mail com os detalhes do pedido em breve.</p>
+            <p>Número do pedido: <strong>#<script>document.write(Math.floor(Math.random() * 10000) + 10000)</script></strong></p>
+            <a href="index.html" class="btn-voltar">Voltar para a loja</a>
+        </div>
+    </div>
+</body>
+</html>

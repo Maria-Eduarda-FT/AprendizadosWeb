@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h4 class="tituloItem">${produto.titulo}</h4>
                             <span class="descricaoItem">${produto.descricao}</span>
                             <div class="precos">
+                                <div class="quantidade">Estoque: ${produto.quantidade || produto.quantidadeDisponivel || 'Indisponível'}</div>
                                 <span class="preco-final">R$${produto.preco}</span>
                             </div>
                         </div>
@@ -122,12 +123,14 @@ document.addEventListener('click', function(e) {
         const titulo = cardProduto.querySelector(".tituloItem").innerText;
         const descricao = cardProduto.querySelector(".descricaoItem").innerText;
         const preco = cardProduto.querySelector(".preco-final").innerText;
-        
+        const quantidadeDisponivel = cardProduto.querySelector(".quantidade").innerText;  // Pegando a quantidade disponível
+         
         localStorage.setItem("produtoSelecionado", JSON.stringify({
             img,
             titulo,
             descricao,
-            preco
+            preco,
+            quantidadeDisponivel 
         }));
         
         window.location.href = "item.html";
@@ -139,8 +142,6 @@ function filtrarProdutos(categoria, event) {
     const secaoAtual = e.target.closest('section');
     const swiperContainer = secaoAtual.querySelector('.swiper');
     const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper');
-    
-    // Limpa o conteúdo atual
     swiperWrapper.innerHTML = '';
     
     fetch('listarItem.php')
@@ -149,9 +150,7 @@ function filtrarProdutos(categoria, event) {
             let produtosParaMostrar = [];
             const sectionId = secaoAtual.id;
             
-            // Determinar quais produtos mostrar com base na categoria e seção
             if (categoria === 'todos') {
-                // Mostrar todos os produtos da seção
                 if (sectionId === 'aromas') {
                     ['amadeirado', 'citrico', 'floral', 'adocicado'].forEach(cat => {
                         if (produtosPorCategoria[cat]) {
@@ -172,13 +171,12 @@ function filtrarProdutos(categoria, event) {
                     });
                 }
             } else {
-                // Mostrar apenas produtos da categoria específica
                 if (produtosPorCategoria[categoria]) {
                     produtosParaMostrar = produtosPorCategoria[categoria];
                 }
             }
             
-            // Renderizar os produtos filtrados
+            // renderizar os produtos filtrados
             produtosParaMostrar.forEach(produto => {
                 const slide = document.createElement('div');
                 slide.className = 'swiper-slide';
@@ -197,12 +195,10 @@ function filtrarProdutos(categoria, event) {
                 swiperWrapper.appendChild(slide);
             });
             
-            // Destruir o Swiper existente se ele existir
             if (swiperContainer.swiper) {
                 swiperContainer.swiper.destroy(true, true);
             }
             
-            // Configurações comuns para todos os Swipers
             const swiperConfig = {
                 loop: true,
                 slidesPerView: 5,
@@ -217,7 +213,6 @@ function filtrarProdutos(categoria, event) {
                 },
             };
             
-            // Inicializar o novo Swiper
             new Swiper(swiperContainer, swiperConfig);
         })
         .catch(error => {

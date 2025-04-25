@@ -3,13 +3,17 @@ header('Content-Type: application/json');
 include 'conexao.php';
 
 try {
-    $query = $pdo->query("SELECT titulo, descricao, imagem, categoria, preco, quantidade FROM produtos");
+    $query = $pdo->query("SELECT * FROM produtos");
     $produtos = $query->fetchAll(PDO::FETCH_ASSOC);
 
     $produtosPorCategoria = [];
 
     foreach ($produtos as $produto) {
         $produtosPorCategoria[$produto['categoria']][] = $produto;
+        
+        if (!isset($produtosPorCategoria['todos'])) {
+            $produtosPorCategoria['todos'] = [];
+        }
         $produtosPorCategoria['todos'][] = $produto;
     }
 
