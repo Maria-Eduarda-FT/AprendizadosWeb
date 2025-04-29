@@ -1,4 +1,3 @@
-/* Resetando os estilos básicos */
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +29,61 @@ body {
     top: 40px;
     left: 80px;
 }
-/* **  menu de navegação  ** */  
+
+/**     PRODUTOS       **/
+.card-produto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    text-align: center;
+    width: 80%;
+    height: 90%;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.card-produto img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.detalhes .descricaoItem {
+    font-size: 12px;
+    color: #aaa;
+    display: block;
+    margin-bottom: 5px;
+    display: block;
+}
+.detalhes h4 {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 5px;
+    color: #333;
+}
+.precos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.preco-final {
+    font-size: 16px;
+    color: #c98895;
+    font-weight: bold;
+}
+
+/* **  MENU DE NAVEGAÇÃO  ** */  
 .navbar {
     background-color: #ee9dad;
     padding: 15px 0px 15px 0px; 
@@ -67,7 +120,6 @@ body {
     display: flex;
     flex-direction: column; 
 }
-
 .fi{
     position: relative;
     font-size: 25px;
@@ -76,7 +128,6 @@ body {
 }
 
 /*   PÁGINA PRINCIPAL   */
-
 #pagInicial{
     display: flex;
     justify-content: center;
@@ -118,7 +169,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .swiper1 {
     position: relative;
     width: 90%;
@@ -138,78 +188,37 @@ body {
     padding: auto;
     height: 100%;
 }
-
-.card-produto {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    overflow: hidden;
-    text-align: center;
-    width: 80%;
-    height: 90%;
-    padding: 20px;
-    
-    transition: all 0.3s ease;
+.swiper1 .swiper-button-prev1{
+    color: #ee9dad;
+    font-size: 24px;
 }
-
-.card-produto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-.card-produto img {
-    width: 100%;
-    height: 90%;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-.detalhes .descricaoItem {
-    font-size: 12px;
-    color: #aaa;
-    display: block;
-    margin-bottom: 5px;
-    display: block;
-}
-.detalhes h4 {
-    font-size: 16px;
-    margin: 0;
-    margin-bottom: 5px;
-    color: #333;
-}
-.precos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-.preco-final {
-    font-size: 16px;
-    color: #c98895;
-    font-weight: bold;
-}
-.preco-antigo {
-    font-size: 14px;
-    color: #bbb;
-    text-decoration: line-through;
-}
-
-.swiper-button-prev1, .swiper-button-next1 {
-    color: #c98895;
+.swiper1 .swiper-button-next1 {
+    color: #ee9dad;
     font-size: 24px;
 }
 
-.swiper-pagination1-bullet {
-    background: rgba(0,0,0,0.3);
-    opacity: 1;
-}
-
-.swiper-pagination1-bullet-active {
-    background: #c98895;
+/** LINHA em baixo dos BOTOES dos FILTROS **/
+.nav__links {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+} 
+.nav__link button {
+    transition: color 0.3s, background 0.3s;
+} 
+.nav__link.active button {
+    color: #c98895;
+    background-color: #fff;
+}  
+.nav__light {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    width: 0;
+    left: 0;
 }
 
 /* **    AROMAS    ** */
@@ -224,63 +233,11 @@ body {
     flex-direction:row;
     z-index: 1;
 }
-
-.hidden {
-    display: none;
-}
-.btn {
-    position: relative;
-    margin-top: 5%;
-    cursor: pointer;
-    border: none;
-}
 .swiper2{
     position: relative;
-
     width: 60%; 
     height: 60%; 
     background-color: #c98895; 
-}
-.swiper-slide2 {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-    border-radius: 10px; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-.swiper-slide2:hover{
-    transform: scale(1.04);
-}
-.swiper-slide2 img {
-    position: relative;
-    width: 80%;
-    height: 85%;
-}
-.swiper-slide2 p {
-    color: black;
-    font-size: 18px;
-    font-family: "Georgia", serif;
-}
-.swiper-button-prev2, .swiper-button-next2 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #f9e7e5;
-}
-.swiper-pagination2-bullet {
-    text-align: center;
-    line-height: 20px;
-    font-size: 12px;
-    color: #000;
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.2);
-}
-.swiper-pagination2-bullet-active {
-    color: #fff;
-    background: #c98895;
 }
 
 /* ---  Entre em contato  --- */
@@ -340,60 +297,18 @@ body {
     background-color: #ee9dad;
     position: relative;
     flex-direction: row;
+    padding: 2%; 
+    box-sizing: border-box;
     z-index: 1;
-}
-.titulo{
-    display: flex;
-    font-family: "Notable", sans-serif;
-    color: #000;
-    font-size: 100px;
-    position: relative; 
-    top: 5%;
-    left: 3%;
 }
 .swiper3{
     position: relative;
-    height: 50%t;
-    width: 80%; 
+    width: 60%; 
+    height: 60%; 
     object-fit: cover;
     background-color: #ee9dad;
 }
-.swiper-slide3 {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
-}
-.swiper-slide3 img {
-    width: 90%;
-    height: 85%;
-    border-radius: 15px; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-.swiper-slide3 p {
-    color: black;
-    font-size: 18px;
-    font-family: "Georgia", serif;
-}
-.swiper-button-prev3, .swiper-button-next2 {
-    font-size: 30px;
-    font-weight: bold; 
-}
-.swiper3 .swiper-pagination-bullet {
-    text-align: center;
-    line-height: 20px;
-    font-size: 12px;
-    color: #000;
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.2);
-}
-.swiper3 .swiper-pagination-bullet-active {
-    color: #fff;
-    background: #fff;
-}
+
 
 /* ---  Nossa Historia  --- */
 #NossaHist{
@@ -436,9 +351,19 @@ body {
     display: flex;
     height: 100vh;
     width: 100%;
+    padding: 2%;  
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
     background-color: #79485a;
 }
-
+.swiper4{
+    position: relative;
+    width: 60%; 
+    height: 60%; 
+    object-fit: cover; 
+}
 /* ---  Monte Seu Pedido  --- */
 #montePedido{
     position: relative;
@@ -455,33 +380,19 @@ body {
     display: flex;
     height: 100vh;
     width: 100%;
+    padding: 2%;  
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
     background-color: #c98895;
-    position: relative;
     
 }
 .swiper5{
     position: relative;
-    object-fit: cover;
-    background-color: #c98895; 
-
-}
-.swiper-slide5 {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-    border-radius: 10px; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-.swiper-slide5:hover{
-    transform: scale(1.04);
-}
-.swiper-slide5 img {
-    width: 80%;
-    height: 85%;
+    width: 60%; 
+    height: 60%; 
+    object-fit: cover; ; 
 }
 /* Estilos do rodapé */
 footer {

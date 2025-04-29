@@ -73,21 +73,30 @@
     <!--    Aromas    -->
     <section class="row p-5" id="aromas">
         <h1 class="titulo">Aromas</h1>
-        <div class="btn-group">
-            <button class="btn btn-dark" onclick="filtrarProdutos('todos', event)">Tudo</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('amadeirado', event)">Amadeirado</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('citrico', event)">Cítrico</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('floral', event)">Floral</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('adocicado', event)">Adocicado</button>
+        <div class="nav mt-4">
+            <ul class="nav__links d-flex list-unstyled p-2 rounded">
+              <li class="nav__link active mx-5">
+                <button class="btn" onclick="filtrarProdutos('todos', event)">Tudo</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('amadeirado', event)">Amadeirado</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('citrico', event)">Cítrico</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('floral', event)">Floral</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('adocicado', event)">Adocicado</button>
+              </li>
+          
+              <div class="nav__light"></div>
+            </ul>
         </div>
 
         <div class="swiper swiper2">
-            <div class="swiper-wrapper">
-
-            </div>
-            <div class="swiper-button-prev swiper-button-prev2"></div>
-            <div class="swiper-button-next swiper-button-next2"></div>
-            <div class="swiper-pagination swiper-pagination2"></div>
+            <div class="swiper-wrapper"><!--slides--></div>
         </div>
     </section>
 
@@ -112,20 +121,29 @@
     <!--   Ambientes       -->
     <section class="row" id="ambientes">
         <h1 class="titulo">Ambientes</h1>
-        <div class="btn-group ">
-            <button class="btn btn-dark" onclick="filtrarProdutos('todos', event)">Tudo</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('escritorio', event)">Escritório</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('sala de estar', event)">Sala de Estar</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('lavabo', event)">Lavabo</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('cozinha', event)">Cozinha</button>
+        <div class="nav mt-4">
+            <ul class="nav__links d-flex list-unstyled p-2 rounded">
+              <li class="nav__link active mx-5">
+                <button class="btn" onclick="filtrarProdutos('todos', event)">Tudo</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('escritorio', event)">Escritório</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('sala de estar', event)">Sala de Estar</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('lavabo', event)">Lavabo</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('cozinha', event)">Cozinha</button>
+              </li>
+          
+              <div class="nav__light"></div>
+            </ul>
         </div>
         <div class="swiper swiper3">
-            <div class="swiper-wrapper">
-                
-            </div>
-            <div class="swiper-button-prev swiper-button-prev3"></div>
-            <div class="swiper-button-next swiper-button-next3"></div>
-            <div class="swiper-pagination swiper-pagination2"></div>
+            <div class="swiper-wrapper"><!--slides--></div>
         </div>
     </section>
 
@@ -152,20 +170,29 @@
     <!--   Para Casa      -->
     <section class="row" id="paraCasa">
         <h1 class="titulo">Para Casa</h1>
-        <div class="btn-group ">
-            <button class="btn btn-dark" onclick="filtrarProdutos('todos', event)">Tudo</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('bandeija', event)">Bandeijas</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('toalha', event)">Toalhas</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('vela', event)">Velas</button>
-            <button class="btn btn-dark" onclick="filtrarProdutos('tapete', event)">Tapetes</button>
-        </div>
+        <div class="nav mt-4">
+            <ul class="nav__links d-flex list-unstyled p-2 rounded">
+              <li class="nav__link active mx-5">
+                <button class="btn" onclick="filtrarProdutos('todos', event)">Tudo</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('bandeija', event)">Bandeijas</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('toalha', event)">Toalhas</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('vela', event)">Velas</button>
+              </li>
+              <li class="nav__link mx-5">
+                <button class="btn" onclick="filtrarProdutos('tapete', event)">Tapetes</button>
+              </li>
+          
+              <div class="nav__light"></div>
+            </ul>
+        </div> 
         <div class="swiper swiper4">
-            <div class="swiper-wrapper">
-
-            </div>
-            <div class="swiper-button-prev swiper-button-prev4"></div>
-            <div class="swiper-button-next swiper-button-next4"></div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper"><!--slides--></div>
         </div>
     </section>
 
@@ -179,12 +206,8 @@
     <!--   Difusores      -->
     <section class="row" id="difusores">
         <h1 class="titulo">Difusores</h1>  
-        <div class="swiper swiper5" >
-            <div class="swiper-wrapper">
-                
-            </div>
-            <div class="swiper-button-prev swiper-button-prev5"></div>
-            <div class="swiper-button-next swiper-button-next5"></div>
+        <div class="swiper swiper5">
+            <div class="swiper-wrapper"><!--slides--></div>
         </div>
     </section>
     <!-- Rodapé -->

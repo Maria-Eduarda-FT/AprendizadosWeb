@@ -7,22 +7,21 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('descricaoItem').innerHTML = produto.descricao;
     document.getElementById('imgPrincipal').src = produto.img;
     
-    let quantidadeDisponivel;
+    let quantidade;
     
-    if (typeof produto.quantidadeDisponivel === 'string' && produto.quantidadeDisponivel.includes('Estoque:')) {
-      quantidadeDisponivel = parseInt(produto.quantidadeDisponivel.replace('Estoque:', '').trim());
-    } else if (!isNaN(parseInt(produto.quantidadeDisponivel))) {
-      quantidadeDisponivel = parseInt(produto.quantidadeDisponivel);
+    if (typeof produto.quantidade === 'string' && produto.quantidade.includes('Estoque:')) {
+      quantidade = parseInt(produto.quantidade.replace('Estoque:', '').trim());
+    } else if (!isNaN(parseInt(produto.quantidade))) {
+      quantidade = parseInt(produto.quantidade);
     } else {
-      quantidadeDisponivel = 0;
+      quantidade = 0;
     }
     
-    produto.quantidadeDisponivel = quantidadeDisponivel;
-    localStorage.setItem("produtoSelecionado", JSON.stringify(produto));
+    const produtoAtualizado = { ...produto, quantidade };
+localStorage.setItem("produtoSelecionado", JSON.stringify(produtoAtualizado));
     
-    // Exibir na página
-    if (quantidadeDisponivel > 0) {
-      document.getElementById('estoqueItem').innerHTML = `Disponível: ${quantidadeDisponivel} unidades`;
+    if (quantidade > 0) {
+      document.getElementById('estoqueItem').innerHTML = `Disponível: ${quantidade} unidades`;
     } else {
       document.getElementById('estoqueItem').innerHTML = "Estoque indisponível";
     }
@@ -53,18 +52,21 @@ function addCarrinho() {
   if (!produto) {
       alert("Nenhum produto selecionado.");
       return;
+  }else if (!produto.id) {
+    alert("Produto inválido: ID não encontrado.");
+    return;
   }
 
-  let quantidadeDisponivel;
-  if (typeof produto.quantidadeDisponivel === 'string' && produto.quantidadeDisponivel.includes('Estoque:')) {
-    quantidadeDisponivel = parseInt(produto.quantidadeDisponivel.replace('Estoque:', '').trim());
-  } else if (!isNaN(parseInt(produto.quantidadeDisponivel))) {
-    quantidadeDisponivel = parseInt(produto.quantidadeDisponivel);
+  let quantidade;
+  if (typeof produto.quantidade === 'string' && produto.quantidade.includes('quantidade:')) {
+    quantidade = parseInt(produto.quantidade.replace('quantidade:', '').trim());
+  } else if (!isNaN(parseInt(produto.quantidade))) {
+    quantidade = parseInt(produto.quantidade);
   } else {
-    quantidadeDisponivel = 0;
+    quantidade = 0;
   }
    
-  if (quantidadeDisponivel <= 0) {
+  if (quantidade <= 0) {
     alert("Este produto não está disponível em estoque.");
     return;
   }
@@ -73,16 +75,23 @@ function addCarrinho() {
   let produtoExistente = carrinho.find(item => item.titulo === produto.titulo);
 
   if (produtoExistente) { 
-    if (produtoExistente.quantidade < quantidadeDisponivel) {
+    if (produtoExistente.quantidade < quantidade) {
       produtoExistente.quantidade += 1;
     } else {
       alert("Quantidade máxima em estoque atingida!");
       return;
     }
-  } else { 
-    produto.quantidade = 1;
-    produto.quantidadeDisponivel = quantidadeDisponivel;
-    carrinho.push(produto);
+  } else {
+    let novoProduto = {
+        id: produto.id,
+        titulo: produto.titulo,
+        preco: produto.preco,
+        descricao: produto.descricao,
+        img: produto.img,
+        estoque: quantidade,   
+        quantidade: 1       
+    };
+    carrinho.push(novoProduto);
   }
 
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
@@ -91,15 +100,17 @@ function addCarrinho() {
 
 function comprarAgora() {
   let produto = JSON.parse(localStorage.getItem("produtoSelecionado"));
-
   if (!produto) {
     alert("Nenhum produto selecionado.");
     return;
+  }else if (!produto.id) {
+    alert("Produto inválido: ID não encontrado.");
+    return;
   }
 
-  const quantidadeDisponivel = produto.quantidadeDisponivel || 0;
+  const quantidade = produto.quantidade || 0;
 
-  if (quantidadeDisponivel <= 0) {
+  if (quantidade <= 0) {
     alert("Este produto não está disponível em estoque.");
     return;
   }
@@ -108,15 +119,23 @@ function comprarAgora() {
   let produtoNoCarrinho = carrinho.find(item => item.id ? item.id === produto.id : item.titulo === produto.titulo);
 
   if (produtoNoCarrinho) {
-    if (produtoNoCarrinho.quantidade < quantidadeDisponivel) {
+    if (produtoNoCarrinho.quantidade < quantidade) {
       produtoNoCarrinho.quantidade += 1;
     } else {
       alert("Quantidade máxima em estoque atingida.");
       return;
     }
   } else {
-    produto.quantidade = 1;
-    carrinho.push(produto);
+    let novoProduto = {
+      id: produto.id,
+      titulo: produto.titulo,
+      preco: produto.preco,
+      descricao: produto.descricao,
+      img: produto.img,
+      estoque: quantidade,
+      quantidade: 1
+  };
+  carrinho.push(novoProduto);
   }
 
   localStorage.setItem("carrinho", JSON.stringify(carrinho));

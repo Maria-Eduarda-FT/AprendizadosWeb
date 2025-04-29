@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h4 class="tituloItem">${produto.titulo}</h4>
                             <span class="descricaoItem">${produto.descricao}</span>
                             <div class="precos">
-                                <div class="quantidade">Estoque: ${produto.quantidade || produto.quantidadeDisponivel || 'Indisponível'}</div>
+                                <div class="quantidade">Estoque: ${produto.quantidade || 'Indisponível'}</div>
                                 <span class="preco-final">R$${produto.preco}</span>
                             </div>
                         </div>
@@ -54,7 +54,6 @@ function inicializaSwipers() {
             prevEl: '.swiper-button-prev1',
         },
         pagination: {
-            el: '.swiper-pagination1',
             clickable: true,
         },
     });
@@ -67,10 +66,6 @@ function inicializaSwipers() {
             el: '.swiper-pagination2',
             clickable: true,
         },
-        navigation: {
-            nextEl: '.swiper-button-next2',
-            prevEl: '.swiper-button-prev2',
-        },
     });
 
     new Swiper('.swiper3', {
@@ -80,10 +75,6 @@ function inicializaSwipers() {
         pagination: {
             el: '.swiper-pagination3',
             clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next3',
-            prevEl: '.swiper-button-prev3',
         },
     });
 
@@ -95,10 +86,6 @@ function inicializaSwipers() {
             el: '.swiper-pagination4',
             clickable: true,
         },
-        navigation: {
-            nextEl: '.swiper-button-next4',
-            prevEl: '.swiper-button-prev4',
-        },
     });
 
     new Swiper('.swiper5', {
@@ -109,30 +96,28 @@ function inicializaSwipers() {
             el: '.swiper-pagination5',
             clickable: true,
         },
-        navigation: {
-            nextEl: '.swiper-button-next5',
-            prevEl: '.swiper-button-prev5',
-        },
     });
 }
 
 document.addEventListener('click', function(e) {
     const cardProduto = e.target.closest('.card-produto');
     if (cardProduto) {
+        const id = cardProduto.getAttribute('data-produto-id');
         const img = cardProduto.querySelector("img").src;
         const titulo = cardProduto.querySelector(".tituloItem").innerText;
         const descricao = cardProduto.querySelector(".descricaoItem").innerText;
         const preco = cardProduto.querySelector(".preco-final").innerText;
-        const quantidadeDisponivel = cardProduto.querySelector(".quantidade").innerText;  // Pegando a quantidade disponível
-         
-        localStorage.setItem("produtoSelecionado", JSON.stringify({
-            img,
-            titulo,
-            descricao,
-            preco,
-            quantidadeDisponivel 
-        }));
+        const quantidade = cardProduto.querySelector(".quantidade")?.innerText || 'Indisponível';  
         
+        localStorage.setItem("produtoSelecionado", JSON.stringify({
+            id: id,
+            img: img,
+            titulo: titulo,
+            descricao: descricao,
+            preco: preco,
+            quantidade: quantidade
+        }));
+        console.log("Produtos para compra:", JSON.parse(localStorage.getItem("produtoSelecionado")));
         window.location.href = "item.html";
     }
 });
@@ -187,6 +172,7 @@ function filtrarProdutos(categoria, event) {
                             <h4 class="tituloItem">${produto.titulo}</h4>
                             <span class="descricaoItem">${produto.descricao}</span>
                             <div class="precos">
+                                <div class="quantidade">Estoque: ${produto.quantidade || 'Indisponível'}</div>
                                 <span class="preco-final">R$${produto.preco}</span>
                             </div>
                         </div>
@@ -219,3 +205,28 @@ function filtrarProdutos(categoria, event) {
             console.error('Erro ao filtrar produtos:', error);
         });
 }
+
+const allNavLinks = document.querySelectorAll('.nav__link');
+const allLights = document.querySelectorAll('.nav__light');
+
+function moveLight(target) {
+    const parentLi = target.closest('.nav__link');
+    const light = parentLi?.parentElement.querySelector('.nav__light');
+    if (parentLi && light) {
+        light.style.left = `${parentLi.offsetLeft}px`;
+        light.style.width = `${parentLi.offsetWidth}px`;
+    }
+}
+
+function activeLink(linkActive) {
+    const sectionLinks = linkActive.closest('ul').querySelectorAll('.nav__link');
+    sectionLinks.forEach(link => link.classList.remove('active'));
+    linkActive.classList.add('active');
+}
+
+allNavLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        moveLight(event.currentTarget);
+        activeLink(event.currentTarget);
+    });
+});

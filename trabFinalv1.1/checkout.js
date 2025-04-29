@@ -73,12 +73,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    document.querySelector("#botaoFinalizarCompra").addEventListener("click", function() {
-        const dadosCompra = compraRapida ? [compraRapida] : carrinho;
-        
-        // Debug - verificar o que está sendo enviado
+    document.querySelector("#botaoFinalizarCompra").addEventListener("click", function(event) {
+        event.preventDefault();
+        const dadosCompra = (compraRapida ? [compraRapida] : carrinho).map(produto => ({
+            id: produto.id,
+            quantidade: produto.quantidade
+        }));
+    
         console.log("Produtos para compra:", dadosCompra);
-        
+    
         fetch("finalizarCompra.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },

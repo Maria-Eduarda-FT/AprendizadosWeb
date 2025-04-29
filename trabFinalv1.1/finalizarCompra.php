@@ -40,7 +40,7 @@ try {
         if ($novaQuantidade < 0) {
             throw new Exception("Estoque insuficiente para o produto ID $id.");
         }
- 
+
         $update = $pdo->prepare("UPDATE produtos SET quantidade = :novaQuantidade WHERE id = :id");
         $update->bindValue(":novaQuantidade", $novaQuantidade, PDO::PARAM_INT);
         $update->bindValue(":id", $id, PDO::PARAM_INT);
